@@ -46,6 +46,11 @@ Making method or attributes private.
 
 When methods/attributes are private, they can only be called by its own functions or within a class.
 
+Make attribute private by adding double underscore to name:
+'''python
+self.__age
+'''
+
 ### Polymorphism
 Means many forms.
 It is the ability to overwrite methods and recall method from parent class using .super()

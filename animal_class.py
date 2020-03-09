@@ -10,16 +10,38 @@ class Animal():
 # characteristics
     def __init__(self,name, age, colour):
         self.name = name
-        self.age = age
+        self.__age = age
         self.colour = colour
         self.heart = True
         self.brain = True
+        self.skills = {}
+
+# Create a method that gets age and returns it
+    def get_age(self): # getter method gives access to encapsulated resources without changing
+        return self.__age
+
+    def set_age(self, __age): # setter method allows you to change attribute
+        # Shouldn't be able to change without being admin
+
+        # fake verification
+        password = input('Password?')
+
+        if password == 'SuperSecret':
+            self.__age = __age
+            return True
+        else:
+            return False
+
+#
+    def __increment_age(self):
+        self.__age += 1
 
 # Methods below/Behaviours
     def eat(self):
         return 'Nom nom nom'
 
     def sleep(self):
+        self.__increment_age()
         return 'zzZZZzzZzzzZZzZzzz'
 
     def reproduce(self):
@@ -44,7 +66,7 @@ print(ringo.sleep())
 
 # Check characteristics
 print(ringo.name)
-print(ringo.age)
+print(ringo.__age)
 print(ringo.colour)
 print(ringo.heart)
 print(ringo.brain)
